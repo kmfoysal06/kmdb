@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHero Blog</title>
+
+    <link rel="shortcut icon" href="./images/blog.png" type="image/x-icon">
+
+    <!-- Daisy  -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#FF1F3D',
+              }
+            }
+          }
+        }
+      </script>
+
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                 
+                    <a href="./Blog.html " target="_blank" class="btn btn-ghost normal-case   lg:font-semibold   text-xl">PHero Blog</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                   
+                </div>
+                <div class="navbar-end">
+                    <a href="./index.html " target="_blank" class="btn bg-primary text-white hover:bg-primary">PHero Tube</a>
+                </div>
+            </div>
+        </nav> 
+
+    </header>
+    <main>
+
+        <section class="flex justify-center items-center flex-col p-10 border-b container mx-auto">
+
+            <div >
+
+                <h3 class="text-2xl md:text-3xl lg:text-4xl font-extrabold">PHero Blog</h3>
+            </div>
+
+            <div class="blog-container flex justify-center items-center my-5 flex-wrap gap-5">
+                <div class="blog-box w-72 md:w-72 lg:w-80  ">
+                    <div class="blog-img w-60  lg:w-80  ">
+                        <img class=" object-cover mx-auto my-auto object-center" src="./images/var.jpg"
+                            alt="">
+                    </div>
+
+                    <div class="blogText p-8 flex flex-col">
+
+                        <h3 
+                            class="BlogTitle text-2xl font-semibold hover:text-red-500 transition-all ease duration-300">Discuss
+                            the scope of var, let, and const
+                        </h3>
+                        <p class="text-slate-400 mt-20 mb-0" id="details" >In JavaScript, variables are
+                            used to store data values that can be used throughout a program. However, the scope of a
+                            variable determines where it can be accessed within the program. In JavaScript, there are
+                            three different types of variable scope: function scope, block scope, and global scope.
+
+                            `var` is a keyword used to declare a variable with function scope. This means that a
+                            variable declared with `var` can be accessed anywhere within the function where it was
+                            declared. If a variable is declared with `var` outside of any function, it has global scope
+                            and can be accessed anywhere in the program. However, this can lead to naming conflicts and
+                            other issues, so it's generally recommended to avoid using global variables.
+
+                            `let` and `const` are keywords used to declare variables with block scope. This means that a
+                            variable declared with `let` or `const` can only be accessed within the block where it was
+                            declared (e.g. inside an `if` statement or `for` loop). This helps prevent naming conflicts
+                            and other issues that can arise from using variables with wider scopes.
+
+                            The difference between `let` and `const` is that `let` can be reassigned to a new value,
+                            while `const` cannot be reassigned after it's been initialized. However, the value of a
+                            `const` variable can still be mutated if it's an object or an array.
+
+                            It's generally recommended to use `let` or `const` instead of `var` because they have more
+                            predictable scoping rules and can help prevent bugs caused by variable hoisting or
+                            accidental reassignment. Additionally, using block-scoped variables can help make your code
+                            more modular and easier to read and maintain.
+
+                            In summary, understanding variable scope is an important part of writing effective
+                            JavaScript code. By using the appropriate variable keywords (`var`, `let`, and `const`) and
+                            understanding how they affect the scope of your variables, you can write more modular,
+                            maintainable, and bug-free code.</p>
+
+
+                    </div>
+
+
+
+                </div>
+                <div class="blog-box w-72 md:w-72 lg:w-80">
+                    <div class="blog-img  w-60  lg:w-80">
+                        <img class=" object-cover mx-auto my-auto object-center" src="./images/null.webp"
+                            alt="">
+                    </div>
+
+                    <div class="blogText p-8 flex flex-col">
+
+                        <a href="#"
+                            class="BlogTitle text-2xl font-semibold hover:text-red-500 transition-all ease duration-300">Tell
+                            us the use cases of null and undefined</a>
+                        <p class="text-slate-400 mt-20 mb-0">In JavaScript, `null` and `undefined` are
+                            two different values that are used to represent the absence of a value. While they may seem
+                            similar at first glance, they have different use cases and behaviors.
+
+                            `undefined` is a value that is automatically assigned to a variable that has been declared
+                            but not initialized. It can also be explicitly assigned to a variable to indicate that it
+                            has no value. For example, if you declare a variable `x` but don't assign it a value, `x`
+                            will be `undefined`. Similarly, if you assign `undefined` to a variable, it will have no
+                            value. `undefined` is also returned by functions that don't explicitly return a value.
+
+                            The primary use case for `undefined` is to indicate that a variable or function has no value
+                            or hasn't been initialized yet. It's also used as a default value for function arguments
+                            that haven't been provided.
+
+                            `null`, on the other hand, is a value that represents the intentional absence of any object
+                            value. It's typically used to indicate that a variable or object property should have no
+                            value. For example, if you want to clear the value of an object property, you can assign it
+                            `null`.
+
+                            The primary use case for `null` is to explicitly indicate that something has no value. It's
+                            often used in APIs and other data exchange formats to represent missing or empty data.
+
+                            It's worth noting that both `null` and `undefined` are falsy values in JavaScript, which
+                            means they evaluate to `false` in boolean contexts. However, they are not equivalent to each
+                            other - `null` is an object type, while `undefined` is a primitive type.
+                            It's worth noting that both `null` and `undefined` are falsy values in
+
+                            In summary, `null` and `undefined` are two different values used to represent the absence of
+                            a value in JavaScript. While they have some overlap in their use cases, they are distinct
+                            values with different behaviors and should be used appropriately depending on the context.
+                        </p>
+
+
+
+                    </div>
+
+
+
+                </div>
+                <div class="blog-box w-72 md:w-72 lg:w-80 ">
+                    <div class="blog-img  w-60  lg:w-80 ">
+                        <img class=" object-cover mx-auto my-auto object-center" src="./images/images.jpeg"
+                            alt="">
+                    </div>
+
+                    <div class="blogText p-8 flex flex-col ">
+
+                        <a href="#"
+                            class="BlogTitle text-2xl font-semibold hover:text-red-500 transition-all ease duration-300">What
+                            do you mean by REST API?</a>
+                        <p class="text-slate-400 mt-20 mb-0" >REST (Representational State Transfer) is a
+                            software architectural style that defines a set of constraints for creating web services. A
+                            RESTful API (Application Programming Interface) is a type of web service that adheres to
+                            these constraints and is designed to enable communication between different software
+                            systems.
+
+                            At its core, a RESTful API is a collection of resources that can be accessed and manipulated
+                            using HTTP requests. Each resource is identified by a unique URL (Uniform Resource Locator),
+                            and the API provides a set of operations (HTTP methods) that can be used to interact with
+                            the resource.
+
+                            The most common HTTP methods used in a RESTful API are:
+
+                            - `GET`: retrieves a representation of the resource
+                            - `POST`: creates a new resource
+                            - `PUT`: updates an existing resource
+                            - `DELETE`: deletes a resource
+
+                            Other HTTP methods, such as `PATCH` and `OPTIONS`, can also be used in a RESTful API.
+
+                            In addition to HTTP methods, a RESTful API also uses HTTP status codes to indicate the
+                            result of an operation. For example, a `200 OK` status code indicates that a request was
+                            successful, while a `404 Not Found` status code indicates that the requested resource was
+                            not found.
+
+                            One of the key benefits of a RESTful API is its flexibility and scalability. Because it uses
+                            standard HTTP methods and status codes, it can be used with any programming language or
+                            platform that supports HTTP requests. It's also designed to be stateless, which means that
+                            each request contains all the information necessary to complete the request - there's no
+                            need for the server to maintain any session state.
+
+                            Overall, RESTful APIs are a powerful tool for enabling communication between different
+                            software systems. By adhering to the constraints of the REST architectural style, developers
+                            can create APIs that are flexible, scalable, and easy to use.</p>
+
+
+
+                    </div>
+
+
+
+                </div> 
+            </div>
+ 
+        </section>
+
+
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="./Script/blog.js"></script>
+</body>
+
+</html>
