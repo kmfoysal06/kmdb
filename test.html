@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 
@@ -12,15 +13,6 @@
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .card-body:hover .card-body-hover{
-            transform: scale(1)!important;
-        }
-        .card-body-hover{
-            transform: scale(0);
-            transition: 0.3s;
-        }
-    </style>
 
     <!-- Tailwind Script -->
 
@@ -103,6 +95,12 @@
 
     <script src="./Script/index.js"></script>
     <input type="checkbox" id="my_modal_7" class="modal-toggle" />
+    <div class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold"></h3>
+  </div>
+  <label class="modal-backdrop" for="my_modal_7">Close</label>
+</div>
 </body>
 
 </html>

@@ -73,7 +73,7 @@ console.log(categories)
     categories.forEach((post) => {
       const div = document.createElement('div');
       div.innerHTML = `
-        <div class="card card-compact bg-base-100 shadow-xl">
+       <div class="card card-compact bg-base-100 shadow-xl relative">
           <figure><img class="w-80" src="https://image.tmdb.org/t/p/w500/${post?.poster_path}" alt="Loading"  /> 
           
           <div class="absolute  mt-40 ml-32 text-white text-xs  font-bold bg-black bg-opacity-50">
@@ -81,7 +81,7 @@ console.log(categories)
         </div>
           
           </figure>
-          <div class="card-body">
+          <div class="card-body cursor-pointer">
             <div class="flex items-center gap-4">
               <span class="font-bold text-base">${post?.title}</span>
             </div>
@@ -91,6 +91,12 @@ console.log(categories)
             <div class="card-actions mx-14">
               <p>popularity ${post?.popularity}</p>
             </div>
+            <div class="card-body-hover w-full h-full bg-black absolute text-white top-0 left-0 rounded text-center cursor-pointer">
+                <div class="flex items-center gap-4 justify-center flex-col p-2">
+                  <h2 class="text-2xl">${post?.title}</h2>
+                  <p>${post?.overview}</p>
+                </div>         
+          </div>
           </div>
         </div>
       `;
@@ -125,7 +131,7 @@ const btnHandler = () => {
     sortedCategories.forEach((post) => {
       const div = document.createElement('div');
       div.innerHTML = `
-       <div class="card card-compact bg-base-100 shadow-xl">
+       <div class="card card-compact bg-base-100 shadow-xl relative">
           <figure><img class="w-80" src="https://image.tmdb.org/t/p/w500/${post?.poster_path}" alt="Loading"  /> 
           
           <div class="absolute  mt-40 ml-32 text-white text-xs  font-bold bg-black bg-opacity-50">
@@ -133,7 +139,7 @@ const btnHandler = () => {
         </div>
           
           </figure>
-          <div class="card-body">
+          <div class="card-body cursor-pointer">
             <div class="flex items-center gap-4">
               <span class="font-bold text-base">${post?.title}</span>
             </div>
@@ -143,10 +149,18 @@ const btnHandler = () => {
             <div class="card-actions mx-14">
               <p>popularity ${post?.popularity}</p>
             </div>
+            <div class="card-body-hover w-full h-full bg-black absolute text-white top-0 left-0 rounded text-center cursor-pointer">
+                <div class="flex items-center gap-4 justify-center flex-col p-2">
+                  <h2 class="text-2xl">${post?.title}</h2>
+                  <p>${post?.overview}</p>
+                </div>         
+          </div>
           </div>
         </div>
       `;
       cardContainer.appendChild(div);
+      pageNoP.textContent = `Page No ${page}` ;
+      nextPageBtn.id = postId;
 
     });
   }
