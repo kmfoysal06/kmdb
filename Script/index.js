@@ -5,8 +5,9 @@ let page = 1;
 let pageNoP = document.querySelector(".page-no");
 let nextPageBtn = document.querySelector(".next-page-btn");
 let prevPageBtn = document.querySelector(".prev-page-btn");
+let generId = ' ';
 nextPageBtn.addEventListener("click",(e)=>{
-  if(page === 1){
+  if(page <= 1){
     prevPageBtn.disabled = true;
   }else{
     prevPageBtn.disabled = false;
@@ -15,7 +16,7 @@ nextPageBtn.addEventListener("click",(e)=>{
   handleLoadPost(e.target.id,page);
 })
 prevPageBtn.addEventListener("click",(e)=>{
-  if(page === 1){
+  if(page <= 1){
     prevPageBtn.disabled = true;
   }else{
     prevPageBtn.disabled = false;
@@ -55,20 +56,18 @@ const handleCategory = async () => {
 };
 
 
-// Post section
+// movie list section
 
 const handleLoadPost = async (postId,page) => {
-  const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=bab42df8cfdaa259b0245a26fd039f95&page=${page}&with_genres=${postId}&per_page=10`);
-
+  generId = postId;
+  const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=bab42df8cfdaa259b0245a26fd039f95&page=${page}&with_genres=${generId}&per_page=10`);
   const data = await response.json();
   categories = data.results;
 
   const cardContainer = document.getElementById('card-container');
   cardContainer.innerHTML = '';
-console.log(categories)
   const cardContainer2 = document.getElementById('card-container2');
   cardContainer2.innerHTML = '';
-// ${convertTime(post?.others?.posted_date ? post?.others?.posted_date : '' )}
   if (categories.length > 0) {
     categories.forEach((post) => {
       const div = document.createElement('div');
@@ -118,11 +117,14 @@ console.log(categories)
     </div>
     `;
   }
+  if(page <= 1){
+    prevPageBtn.disabled = true;
+  }
 };
 
 const shortBtn = document.getElementById('sortBtn');
 
-const btnHandler = () => {
+const btnHandler = (postId,page) => {
   const sortedCategories = [...categories].sort((a, b) => parseInt(b.popularity) - parseInt(a.popularity));
   const cardContainer = document.getElementById('card-container');
   cardContainer.innerHTML = '';
@@ -166,7 +168,7 @@ const btnHandler = () => {
   }
 };
 
-shortBtn.addEventListener('click', btnHandler);
+shortBtn.addEventListener('click', btnHandler(generId,page));
 
 
 
