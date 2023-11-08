@@ -54,13 +54,16 @@ const handleCategory = async () => {
     categoryContainer.appendChild(div);
   });
 };
+const apiKey = process.env.tmdb_api_key;
+console.log(apiKey);
+
 
 
 // movie list section
 
 const handleLoadPost = async (postId,page) => {
   generId = postId;
-  const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb_api_key}&page=${page}&with_genres=${generId}&per_page=10`);
+  const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=bab42df8cfdaa259b0245a26fd039f95y&page=${page}&with_genres=${generId}&per_page=10`);
   const data = await response.json();
   categories = data.results;
 
