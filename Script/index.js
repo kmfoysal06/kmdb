@@ -60,7 +60,7 @@ const handleCategory = async () => {
 
 const handleLoadPost = async (postId,page) => {
   generId = postId;
-  const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=process.env.tmdb_api_key&page=${page}&with_genres=${generId}&per_page=10`);
+  const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb_api_key}&page=${page}&with_genres=${generId}&per_page=10`);
   const data = await response.json();
   categories = data.results;
 
