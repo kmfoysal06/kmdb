@@ -1,5 +1,5 @@
 <?php
-$apiKey = "6aee8af66cf310d1c78d8cf04df0cf54";
+$apiKey = "your API key";
 if(isset($_GET['page']) && isset($_GET['generId'])){
 	$page = $_GET['page'];
 	$generId = $_GET['generId'] ;
