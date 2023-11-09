@@ -138,57 +138,57 @@ const handleLoadPost = async function(postId,page)  {
 
 const shortBtn = document.getElementById("sortBtn");
 
-// const btnHandler = function(postId,page) {
-//   const sortedCategories = 
-//         [...categories].sort((a, b) =>
-//        parseInt(b.popularity) - parseInt(a.popularity));
-//   const cardContainer = document.getElementById("card-container");
-//   cardContainer.innerHTML = "";
+const btnHandler = function(postId,page) {
+  const sortedCategories = 
+        [...categories].sort((a, b) =>
+       parseInt(b.popularity) - parseInt(a.popularity));
+  const cardContainer = document.getElementById("card-container");
+  cardContainer.innerHTML = "";
 
-//   if (Array.isArray(sortedCategories)) {
-//     sortedCategories.forEach(function(post) {
-//       const div = document.createElement("div");
-//       div.innerHTML = `
-//        <div class="card card-compact bg-base-100 shadow-xl relative">
-//           <figure><img class="w-80"
-//           src="https://image.tmdb.org/t/p/w500/${post?.poster_path}"
-//           alt="Loading"  />
-//           <div
-//           class="absolute  mt-40 ml-32 text-white text-xs
-//           font-bold bg-black bg-opacity-50">
-//          ${post?.release_date}
-//         </div>
-//           </figure>
-//           <div class="card-body cursor-pointer">
-//             <div class="flex items-center gap-4">
-//               <span class="font-bold text-base">${post?.title}</span>
-//             </div>
-//             <div class="flex items-center gap-4 mx-14">
-//               <h2 class="font-normal text-sm"></h2>
-//             </div>
-//             <div class="card-actions mx-14">
-//               <p>popularity ${post?.popularity}</p>
-//             </div>
-//           <div
-//           class="card-body-hover w-full h-full bg-black absolute
-//           text-white top-0 left-0 rounded text-center cursor-pointer">
-//               <div class="flex items-center gap-4 justify-center flex-col p-2">
-//                   <h2 class="text-2xl">${post?.title}</h2>
-//                   <p>${post?.overview}</p>
-//                 </div>
-//           </div>
-//           </div>
-//         </div>
-//       `;
-//       cardContainer.appendChild(div);
-//       pageNoP.textContent = `Page No ${page}` ;
-//       nextPageBtn.id = postId;
+  if (Array.isArray(sortedCategories)) {
+    sortedCategories.forEach(function(post) {
+      const div = document.createElement("div");
+      div.innerHTML = `
+       <div class="card card-compact bg-base-100 shadow-xl relative">
+          <figure><img class="w-80"
+          src="https://image.tmdb.org/t/p/w500/${post?.poster_path}"
+          alt="Loading"  />
+          <div
+          class="absolute  mt-40 ml-32 text-white text-xs
+          font-bold bg-black bg-opacity-50">
+         ${post?.release_date}
+        </div>
+          </figure>
+          <div class="card-body cursor-pointer">
+            <div class="flex items-center gap-4">
+              <span class="font-bold text-base">${post?.title}</span>
+            </div>
+            <div class="flex items-center gap-4 mx-14">
+              <h2 class="font-normal text-sm"></h2>
+            </div>
+            <div class="card-actions mx-14">
+              <p>popularity ${post?.popularity}</p>
+            </div>
+          <div
+          class="card-body-hover w-full h-full bg-black absolute
+          text-white top-0 left-0 rounded text-center cursor-pointer">
+              <div class="flex items-center gap-4 justify-center flex-col p-2">
+                  <h2 class="text-2xl">${post?.title}</h2>
+                  <p>${post?.overview}</p>
+                </div>
+          </div>
+          </div>
+        </div>
+      `;
+      cardContainer.appendChild(div);
+      pageNoP.textContent = `Page No ${page}` ;
+      nextPageBtn.id = postId;
 
-//     });
-//   }
-// };
+    });
+  }
+};
 
-// shortBtn.addEventListener("click", btnHandler(generId,page));
+shortBtn.addEventListener("click", btnHandler(generId,page));
 
 
 
