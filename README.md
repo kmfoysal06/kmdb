@@ -17,7 +17,7 @@ for this first you have to create a new account on ( https://www.themoviedb.org)
 
 
 ### Clone this repo
-After completing Register a API key then you have to clone this repo by
+After completing Register a API key then you have to clone this repo by   
 `git clone https://github.com/kmfoysal06/kmdb`   
 Then CD to kmdb Directory By    
 `cd kmdb/`     
