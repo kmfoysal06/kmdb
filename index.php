@@ -57,9 +57,6 @@
 
                     <a class="btn btn-ghost normal-case text-xl"><h3 class="">KMDB</h3></a>
                 </div>
-                <div class="navbar-center  lg:flex">
-                   <button class="btn " id="sortBtn">Sort by view</button>
-                </div>
                 <div class="navbar-end hidden lg:flex ">
                     <a class="btn text-white bg-primary hover:bg-primary " href="https://www.themoviedb.org/" target="_blank">MAIN</a>
                 </div>
